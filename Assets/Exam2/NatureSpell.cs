@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NatureSpell : MonoBehaviour
+public class NatureSpell : Spell
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Cast();
+        Cast("Nymph");
+        Cast("Nymph", 25);
+        Cast("Teammate", 30f);
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void Cast()
     {
-        
+        Debug.Log($"Casting Nature Spirit! Become Ranger!!!");
+    }
+    public void Cast(string target, float heal)
+    {
+        Debug.Log($"Casting Spell on {target}. Heal amount {heal}");
     }
 }

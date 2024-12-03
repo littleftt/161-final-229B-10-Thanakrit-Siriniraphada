@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceSpell : MonoBehaviour
+public class IceSpell : Spell
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Cast();
+        Cast("Fire Spirit");
+        Cast("Fire Spirit", 30);
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void Cast()
     {
-        
+        Debug.Log($"Casting IceBullet! Welcome to Christmas!!!");
     }
 }
